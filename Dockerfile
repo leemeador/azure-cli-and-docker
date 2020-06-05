@@ -21,3 +21,4 @@ RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $(lsb
 RUN apt-get update
 RUN apt-get -y install docker-ce docker-ce-cli
 RUN apt-get -y install azure-cli=${AZURE_CLI_VERSION}-1~buster
+
