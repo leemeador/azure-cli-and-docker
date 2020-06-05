@@ -3,6 +3,8 @@ FROM golang
 MAINTAINER Lee Meador <lee.meador@aa.com>
 LABEL maintainer="lee.meador@aa.com"
 
+ENV AZURE_CLI_VERSION 2.7.0
+
 RUN apt-get update
 RUN apt-get -y install apt-transport-https ca-certificates curl gnupg software-properties-common lsb-release gnupg
 
@@ -18,4 +20,4 @@ RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $(lsb
 
 RUN apt-get update
 RUN apt-get -y install docker-ce docker-ce-cli
-RUN apt-get -y install azure-cli
+RUN apt-get -y install azure-cli=${AZURE_CLI_VERSION}-1~buster
