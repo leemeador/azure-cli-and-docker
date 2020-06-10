@@ -5,6 +5,9 @@ LABEL maintainer="lee.meador@aa.com"
 
 ENV AZURE_CLI_VERSION 2.7.0
 
+# set a fixed group id for the docker group
+RUN groupadd -for --gid 787 docker
+
 RUN apt-get update
 RUN apt-get -y install apt-transport-https ca-certificates curl gnupg software-properties-common lsb-release gnupg
 
